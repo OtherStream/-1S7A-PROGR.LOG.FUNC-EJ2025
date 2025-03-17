@@ -1,0 +1,51 @@
+cabal-version:      3.0
+
+-- Nombre del paquete
+name:               Bowling
+
+-- Versión del paquete
+version:            0.1.0.0
+
+-- Licencia y autoría
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Andres Marzal
+maintainer:         amarzal AT uji.es
+
+-- Tipo de construcción
+build-type:         Simple
+
+-- Archivos adicionales
+extra-doc-files:    CHANGELOG.md
+
+-- Configuración común de advertencias
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Bowling
+    hs-source-dirs:   src
+    build-depends:    base ^>=4.17.2.1
+    default-language: Haskell2010
+
+executable Bowling
+    import:           warnings
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:
+        base ^>=4.17.2.1,
+        Bowling
+    default-language: Haskell2010
+
+test-suite Bowling-test
+    import:           warnings
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Tests.hs
+    build-depends:
+        base ^>=4.17.2.1,
+        tasty,
+        tasty-hunit,
+        Bowling
+    default-language: Haskell2010
