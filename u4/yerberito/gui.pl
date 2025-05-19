@@ -59,7 +59,7 @@ mostrar_info_filtro(Filtro, Ventana) :-
     send(CampoTexto, clear),
     send(CampoTexto, insert, Texto),
     % Cargar y mostrar la imagen con ancho igual al del editor
-    atom_concat('C:\\Users\\alexe\\Downloads\\prolog\\prolog\\imgs\\', PlantaLower, BasePath),
+    atom_concat('C:\\Users\\alexe\\Downloads\\u4\\yerberito\\imgs\\', PlantaLower, BasePath),
     atom_concat(BasePath, '.jpg', FilePath),
     (   exists_file(FilePath)
     ->  (get(Ventana, member, salida, Salida),
